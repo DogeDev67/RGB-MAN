@@ -167,3 +167,5 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 			global.current_room.y += 1
 		elif position.y < $Camera2D.position.y:
 			global.current_room.y -= 1
+
+# goofy aah code
