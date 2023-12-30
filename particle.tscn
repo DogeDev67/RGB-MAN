@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj0m8xj5647w6"]
+
+[ext_resource type="Script" path="res://particle.gd" id="1_nvi5q"]
+[ext_resource type="Texture2D" uid="uid://c2pmfx0bxuy6n" path="res://sprites/lethal/spike.png" id="2_j2epa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hor1c"]
+size = Vector2(2, 2)
+
+[node name="particle" type="RigidBody2D"]
+scale = Vector2(5.135, 5.135)
+script = ExtResource("1_nvi5q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_j2epa")
+hframes = 5
+vframes = 5
+frame = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hor1c")

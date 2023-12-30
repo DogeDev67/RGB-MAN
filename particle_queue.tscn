@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhpip8yv26a80"]
+
+[sub_resource type="GDScript" id="GDScript_hldcn"]
+
+[node name="particle_queue" type="Node2D"]
+script = SubResource("GDScript_hldcn")

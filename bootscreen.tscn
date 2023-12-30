@@ -1,0 +1,178 @@
+[gd_scene load_steps=6 format=3 uid="uid://cx7uwiotis0rh"]
+
+[ext_resource type="Script" path="res://bootscreen.gd" id="1_ao6b7"]
+[ext_resource type="AudioStream" uid="uid://duwwoq8e7orhi" path="res://sounds/booting.mp3" id="2_as00n"]
+
+[sub_resource type="Animation" id="Animation_f7y5f"]
+resource_name = "booting"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.8, 1.3, 1.5, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "DogeOS version 1.06
+
+BIOS DATE: NA
+
+", "DogeOS version 1.06
+
+BIOS DATE: NA
+
+CPU: 6510 DDEV ed.
+SPEED: 0.9 MHz
+MEMORY: 1024 kb
+
+", "DogeOS version 1.06
+
+BIOS DATE: NA
+
+CPU: 6510 DDEV ed.
+SPEED: 0.9 MHz
+MEMORY: 1024 kb
+
+C:\\", "DogeOS version 1.06
+
+BIOS DATE: NA
+
+CPU: 6510 DDEV ed.
+SPEED: 0.9 MHz
+MEMORY: 1024 kb
+
+C:\\LOAD RGB-MAN", "DogeOS version 1.06
+
+BIOS DATE: NA
+
+CPU: 6510 DDEV ed.
+SPEED: 0.9 MHz
+MEMORY: 1024 kb
+
+C:\\LOAD RGB-MAN
+
+loading disc.", "DogeOS version 1.06
+
+BIOS DATE: NA
+
+CPU: 6510 DDEV ed.
+SPEED: 0.9 MHz
+MEMORY: 1024 kb
+
+C:\\LOAD RGB-MAN
+
+loading disc..", "DogeOS version 1.06
+
+BIOS DATE: NA
+
+CPU: 6510 DDEV ed.
+SPEED: 0.9 MHz
+MEMORY: 1024 kb
+
+C:\\LOAD RGB-MAN
+
+loading disc...", "DogeOS version 1.06
+
+BIOS DATE: NA
+
+CPU: 6510 DDEV ed.
+SPEED: 0.9 MHz
+MEMORY: 1024 kb
+
+C:\\LOAD RGB-MAN
+
+loading disc.", "DogeOS version 1.06
+
+BIOS DATE: NA
+
+CPU: 6510 DDEV ed.
+SPEED: 0.9 MHz
+MEMORY: 1024 kb
+
+C:\\LOAD RGB-MAN
+
+loading disc..", "DogeOS version 1.06
+
+BIOS DATE: NA
+
+CPU: 6510 DDEV ed.
+SPEED: 0.9 MHz
+MEMORY: 1024 kb
+
+C:\\LOAD RGB-MAN
+
+loading disc...", "DogeOS version 1.06
+
+BIOS DATE: NA
+
+CPU: 6510 DDEV ed.
+SPEED: 0.9 MHz
+MEMORY: 1024 kb
+
+C:\\LOAD RGB-MAN
+
+loading disc.", "DogeOS version 1.06
+
+BIOS DATE: NA
+
+CPU: 6510 DDEV ed.
+SPEED: 0.9 MHz
+MEMORY: 1024 kb
+
+C:\\LOAD RGB-MAN
+
+loading disc..", "DogeOS version 1.06
+
+BIOS DATE: NA
+
+CPU: 6510 DDEV ed.
+SPEED: 0.9 MHz
+MEMORY: 1024 kb
+
+C:\\LOAD RGB-MAN
+
+loading disc...", ""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_vjpkf"]
+resource_name = "bootinh"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rfp8l"]
+_data = {
+"booting": SubResource("Animation_f7y5f"),
+"bootinh": SubResource("Animation_vjpkf")
+}
+
+[node name="bootscreen" type="Node2D"]
+script = ExtResource("1_ao6b7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_as00n")
+pitch_scale = 0.78
+
+[node name="Label" type="Label" parent="."]
+offset_left = 17.0
+offset_top = 13.0
+offset_right = 1109.0
+offset_bottom = 611.0
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rfp8l")
+}

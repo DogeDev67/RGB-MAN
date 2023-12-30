@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dom85p6hwy12e"]
+
+[ext_resource type="Texture2D" uid="uid://c4r2vxd4d87i8" path="res://sprites/misc/cloudparticle.png" id="1_hph8r"]
+[ext_resource type="Script" path="res://clouds.gd" id="2_ilalx"]
+
+[sub_resource type="Curve" id="Curve_g03cy"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="clouds" type="CPUParticles2D"]
+scale = Vector2(2, 2)
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+speed_scale = 0.35
+explosiveness = 1.0
+randomness = 0.2
+texture = ExtResource("1_hph8r")
+spread = 180.0
+gravity = Vector2(0, 1)
+initial_velocity_min = 3.0
+initial_velocity_max = 8.0
+scale_amount_curve = SubResource("Curve_g03cy")
+script = ExtResource("2_ilalx")
