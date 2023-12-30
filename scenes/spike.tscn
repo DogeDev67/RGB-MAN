@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8e4k5k2c6614"]
+
+[ext_resource type="Texture2D" uid="uid://c2pmfx0bxuy6n" path="res://assets/sprites/lethal/spike.png" id="1_8y3st"]
+
+[sub_resource type="GDScript" id="GDScript_0brl5"]
+script/source = "extends StaticBody2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgf6c"]
+size = Vector2(4, 14)
+
+[node name="spike" type="StaticBody2D" groups=["lethal"]]
+scale = Vector2(0.5, 0.5)
+script = SubResource("GDScript_0brl5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8y3st")
+
+[node name="hurtbox" type="Area2D" parent="." groups=["lehal"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_jgf6c")

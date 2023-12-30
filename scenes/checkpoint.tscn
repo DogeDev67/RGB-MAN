@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://despr47cgrcqu"]
+
+[ext_resource type="Script" path="res://scripts/checkpoint.gd" id="1_ps3bh"]
+[ext_resource type="Texture2D" uid="uid://x566224hnbi" path="res://assets/sprites/misc/checkpointoff.png" id="2_cp0tu"]
+[ext_resource type="Texture2D" uid="uid://crwga77r3wv5r" path="res://assets/sprites/misc/checkpoint.png" id="3_vqire"]
+[ext_resource type="AudioStream" uid="uid://d036y3o2dox6n" path="res://assets/sounds/checkpointactivation.wav" id="4_mwvwj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kwwji"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cp0tu")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vqire")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vi1g"]
+size = Vector2(20, 31)
+
+[node name="checkpoint" type="StaticBody2D" groups=["checkpoint"]]
+script = ExtResource("1_ps3bh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kwwji")
+animation = &"off"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_8vi1g")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mwvwj")
